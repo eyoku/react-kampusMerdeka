@@ -35,8 +35,8 @@ function Home () {
 `;
 
 const insertData = gql`
-mutation MyMutation($jenis_kelamin: String!, $nama: String! $umur: Int!, $id: Int!) {
-    insert_anggota(objects: {jenis_kelamin: $jenis_kelamin, nama: $nama, umur: $umur, id: $id}) {
+mutation MyMutation($jenis_kelamin: String!, $nama: String! $umur: Int!) {
+    insert_anggota(objects: {jenis_kelamin: $jenis_kelamin, nama: $nama, umur: $umur}) {
       returning {
         jenis_kelamin
         nama

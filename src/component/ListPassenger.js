@@ -6,16 +6,16 @@ import { useState } from 'react';
 
 
 const ListPassenger = props => {
-    console.log(props.data)
+    console.log("List Passenger = ",props.data)
         
     return (
         <div>
             <table cellPadding="5px" cellSpacing="0" style={{margin: "auto"}}>
                 <thead bgcolor="red">
-                    <td>Nama</td>
-                    <td>Umur</td>
-                    <td>Jenis Kelamin</td>
-                    <td bgcolor="white" className="removeBorder"></td>
+                    <th>Nama</th>
+                    <th>Umur</th>
+                    <th>Jenis Kelamin</th>
+                    <th bgcolor="white" className="removeBorder"></th>
                 </thead>
                 {props.data?.map(item => (
                     <ListItem
