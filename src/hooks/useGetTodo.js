@@ -16,7 +16,7 @@ export default function useGetTodo() {
     });
   };
   return {
-    todolist: data ? data.exercise_todolist : [],
+    todolist: data ? data.todolist : [],
     loading,
     error,
     subscribeTodo,

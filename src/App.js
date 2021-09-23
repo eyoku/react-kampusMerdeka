@@ -6,6 +6,7 @@ import useDeleteTodo from "hooks/useDeleteTodo";
 import useUpdateTodo from "hooks/useUpdateTodo";
 import useInsertTodo from "hooks/useInsertTodo";
 import useGetTodo from "hooks/useGetTodo";
+import LoadingSvg from "components/LoadingSvg";
 // import useSubscribeTodo from "hooks/useSubscribeTodo";
 function TodoList() {
   const { todolist, loading, error, subscribeTodo } = useGetTodo();
@@ -18,12 +19,10 @@ function TodoList() {
     subscribeTodo();
   });
 
-  // const [userId, setUserId] = useState(0);
-  // const [list, setList] = useState([]);
   const [title, setTitle] = useState("");
 
   if (loading || loadingUpdate || loadingDelete || loadingInsert) {
-    return <h3>Loading...</h3>;
+    return <LoadingSvg />;
   }
 
   if (error) {
@@ -43,13 +42,11 @@ function TodoList() {
       variables: {
         object: {
           title: title,
-          user_id: 1,
+          user_id: 2,
         },
       },
     });
     setTitle("");
-    // setList((prev) => [...prev, { checked: false, title }]);
-    // setTitle("");
   };
 
   const onClickItem = (idx) => {
@@ -60,35 +57,15 @@ function TodoList() {
         is_done: !item.is_done,
       },
     });
-    // refetch();
   };
 
   const onDeleteItem = (idx) => {
-    // const newList = list.filter((_, i) => i !== idx);
-    // setList(newList);
     deleteTodo({ variables: { id: idx } });
   };
-
-  // const onGetData = () => {
-  //   getTodo({
-  //     variables: {
-  //       user_id: userId,
-  //     },
-  //   });
-  //   setList(data?.exercise_todolist);
-  // };
-
-  // const onChangeUserId = (e) => {
-  //   if (e.target) {
-  //     setUserId(e.target.value);
-  //   }
-  // };
 
   return (
     <>
       <div className="container">
-        {/* <input value={userId} onChange={onChangeUserId} />
-        <button onClick={onGetData}>Get Data</button> */}
         <h1 className="app-title">todos</h1>
         <ul className="todo-list js-todo-list">
           {todolist.map((v) => (

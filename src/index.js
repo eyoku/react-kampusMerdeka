@@ -9,21 +9,21 @@ import { split, HttpLink } from "@apollo/client";
 import { getMainDefinition } from "@apollo/client/utilities";
 
 const httpLink = new HttpLink({
-  uri: "https://allowed-coral-63.hasura.app/v1/graphql",
+  uri: "https://todolist-exercise.hasura.app/v1/graphql",
   headers: {
     "x-hasura-admin-secret":
-      "4VZCamCJo3FT01RhnquaD3Jc1Qrxu9WI32QnXvBqZNuDetk9uwX5gJOuOSemg7B7",
+      "SHU7LgGVXZaeEK8cfHOooC4RFsL1guX80xCIyJHW57gdO8n5IiohHo1feeYNfsiO",
   },
 });
 
 const wsLink = new WebSocketLink({
-  uri: "wss://allowed-coral-63.hasura.app/v1/graphql",
+  uri: "wss://todolist-exercise.hasura.app/v1/graphql",
   options: {
     reconnect: true,
     connectionParams: {
       headers: {
         "x-hasura-admin-secret":
-          "4VZCamCJo3FT01RhnquaD3Jc1Qrxu9WI32QnXvBqZNuDetk9uwX5gJOuOSemg7B7",
+          "SHU7LgGVXZaeEK8cfHOooC4RFsL1guX80xCIyJHW57gdO8n5IiohHo1feeYNfsiO",
       },
     },
   },
