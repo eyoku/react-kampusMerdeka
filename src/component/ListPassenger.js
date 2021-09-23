@@ -18,10 +18,10 @@ const ListPassenger = () => {
     return <h3>Terjadi kesalahan</h3>;
   }
 
-  const hapusPengunjung = (xxxx) => {
+  const hapusPengunjung = (idx) => {
     deleteUser({
       variables: {
-        id: xxxx,
+        id: idx,
       },
     });
     setTimeout(() => {
