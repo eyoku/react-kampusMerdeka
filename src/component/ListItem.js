@@ -9,11 +9,9 @@ const ListItem = (props) => {
         <td>{nama}</td>
         <td>{umur}</td>
         <td>{jenis_kelamin}</td>
-        <td className="removeBorder" onClick={editAnggota}>
-          <button>edit nama</button>
-        </td>
-        <td className="removeBorder" onClick={hapusPengunjung}>
-          <button>Hapus</button>
+        <td >
+          <button onClick={editAnggota}>Edit</button>
+          <button c onClick={hapusPengunjung}>Hapus</button>
         </td>
       </tr>
     </tbody>

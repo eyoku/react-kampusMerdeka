@@ -46,7 +46,6 @@ function PassengerInput() {
           nama: nama,
           umur: umur,
           jenisKelamin: jenis_kelamin,
-          // id: userId,
         };
         tambahPengunjung(newData);
 
@@ -104,11 +103,11 @@ function PassengerInput() {
         <p>Masukkan Jenis Kelamin Anda</p>
         <select
           onChange={onChangeGender}
-          defaultValue="Laki-laki"
+          defaultValue="Pria"
           name={jenis_kelamin}
         >
-          <option value="Laki-laki">Laki-laki</option>
-          <option value="Perempuan">Perempuan</option>
+          <option value="Pria">Pria</option>
+          <option value="Wanita">Wanita</option>
         </select>
         <p></p>
         <button onClick={handleSubmit}>Submit</button>

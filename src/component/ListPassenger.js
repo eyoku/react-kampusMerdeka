@@ -26,13 +26,13 @@ const ListPassenger = () => {
       },
     });
     setTimeout(() => {
-      alert("data berhasil dihapus");
+      alert("Berhasil hapus data");
     }, 1500);
   };
 
   const editAnggota = async (idx) => {
     const item = anggota.find((v) => v.id === idx);
-    const gantinama = prompt("masukan nama", item.nama);
+    const gantinama = prompt("Nama : ", item.nama);
     if (gantinama) {
       updateUser({
         variables: {
@@ -42,7 +42,7 @@ const ListPassenger = () => {
       });
 
       setTimeout(() => {
-        alert("nama berhasil diubah");
+        alert("Berhasil ubah nama");
       }, 3000);
     }
   };
@@ -59,7 +59,8 @@ const ListPassenger = () => {
             <td>Nama</td>
             <td>Umur</td>
             <td>Jenis Kelamin</td>
-            <td bgcolor="white" className="removeBorder"></td>
+            {/* <td bgcolor="white" className="removeBorder"></td> */}
+            <td>Action</td>
           </tr>
         </thead>
         {anggota.map((item) => (
