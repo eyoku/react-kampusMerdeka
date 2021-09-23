@@ -4,6 +4,7 @@ import ListItem from "./ListItem";
 import useDeleteUser from "../hooks/useDeleteUser";
 import useGetUser from "../hooks/useGetUser";
 import useUpdateUser from "../hooks/useUpdateTodo";
+import LoadingSvg from "./LoadingSvg";
 
 const ListPassenger = () => {
   const { anggota, loading, error, subscribeUser } = useGetUser();
@@ -15,7 +16,7 @@ const ListPassenger = () => {
   });
 
   if (error) {
-    return <h3>Terjadi kesalahan</h3>;
+    return <LoadingSvg />;
   }
 
   const hapusPengunjung = (idx) => {
